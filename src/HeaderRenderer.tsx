@@ -29,10 +29,10 @@ export default function HeaderRenderer<R, SR>({
   sortDirection,
   priority,
   onSort,
-  isCellSelected
-}: HeaderRendererProps<R, SR>) {
+  isCellSelected,
+  children
+}: HeaderRendererProps<R, SR> & { children?: React.ReactNode }) {
   if (!column.sortable) return <>{column.name}</>;
-
   return (
     <SortableHeaderCell
       onSort={onSort}
@@ -40,7 +40,7 @@ export default function HeaderRenderer<R, SR>({
       priority={priority}
       isCellSelected={isCellSelected}
     >
-      {column.name}
+      {children ? children : column.name}
     </SortableHeaderCell>
   );
 }

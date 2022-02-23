@@ -83,12 +83,6 @@ const root = css`
   &.rdg-light {
     --rdg-color-scheme: light;
   }
-
-  @media (prefers-color-scheme: dark) {
-    &:not(.rdg-light) {
-      ${darkTheme}
-    }
-  }
 `;
 
 export const rootClassname = `rdg ${root}`;
